@@ -8,11 +8,8 @@ io.on('connection', client => {
         console.log('Dispositivo Desconectado');
     });
 
-    client.on('mensaje', (payload) => {
-        console.log('mensaje', payload);
-
-        io.emit('mensaje', { admin: 'Nuevo Mensaje' });
-
+    client.on('emitir-llamado-estudiante', (payload) => {
+        io.broadcast.emit('nuevo-llamado-estudiante', payload);
     });
 
 });
