@@ -9,7 +9,7 @@ io.on('connection', client => {
     });
 
     client.on('emitir-llamado-estudiante', (payload) => {
-        io.emit('nuevo-llamado-estudiante', payload);
+        client.broadcast.emit('nuevo-llamado-estudiante', payload);
     });
 
 });
